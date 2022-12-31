@@ -51,23 +51,23 @@ env:
   STEAMBETA: false # -- set experimental game version
 
 service:
-  type: NodePort
+  type: LoadBalancer
   ports:
     game:
-      port: 7777
-      nodePort: 7777
-      protocol: UDP
       name: game
+      port: 7777
+      targetPort: 7777
+      protocol: UDP
     query:
-      port: 15777
-      nodePort: 157777
-      protocol: UDP
       name: query
-    beacon:
-      port: 15000
-      nodePort: 15000
+      port: 15777
+      targetPort: 157777
       protocol: UDP
+    beacon:
       name: beacon
+      port: 15000
+      targetPort: 15000
+      protocol: UDP
 
 resources:
   {}

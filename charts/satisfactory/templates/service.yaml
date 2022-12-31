@@ -13,18 +13,15 @@ spec:
   ports:
     - name: {{ .Values.service.ports.beacon.name }}
       port: {{ .Values.service.ports.beacon.port }}
-      targetPort: {{ .Values.service.ports.beacon.name }}
+      targetPort: {{ .Values.service.ports.beacon.targetPort }}
       protocol: {{ .Values.service.ports.beacon.protocol }}
-      nodePort: {{ .Values.service.ports.beacon.port }}
     - name: {{ .Values.service.ports.game.name }}
       port: {{ .Values.service.ports.game.port }}
-      nodePort: {{ .Values.service.ports.game.port }}
-      targetPort: {{ .Values.service.ports.game.name }}
+      targetPort: {{ .Values.service.ports.game.targetPort }}
       protocol: {{ .Values.service.ports.game.protocol }}
     - name: {{ .Values.service.ports.query.name }}
       port: {{ .Values.service.ports.query.port }}
-      targetPort: {{ .Values.service.ports.query.name }}
+      targetPort: {{ .Values.service.ports.query.targetPort }}
       protocol: {{ .Values.service.ports.query.protocol }}
-      nodePort: {{ .Values.service.ports.query.port }}
   selector:
     {{- include "satisfactory.selectorLabels" . | nindent 4 }}

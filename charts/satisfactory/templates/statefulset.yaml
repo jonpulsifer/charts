@@ -28,13 +28,13 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: {{ .Values.service.ports.beacon.name }}
-              containerPort: {{ .Values.service.ports.beacon.port }}
+              containerPort: {{ .Values.service.ports.beacon.targetPort }}
               protocol: {{ .Values.service.ports.beacon.protocol }}
             - name: {{ .Values.service.ports.game.name }}
-              containerPort: {{ .Values.service.ports.game.port }}
+              containerPort: {{ .Values.service.ports.game.targetPort }}
               protocol: {{ .Values.service.ports.game.protocol }}
             - name: {{ .Values.service.ports.query.name }}
-              containerPort: {{ .Values.service.ports.query.port }}
+              containerPort: {{ .Values.service.ports.query.targetPort }}
               protocol: {{ .Values.service.ports.query.protocol }}
           env:
           {{- range $key, $value := .Values.env }}
