@@ -31,6 +31,25 @@ securityContext:
 ingress:
   enabled: false
 
+service:
+  type: LoadBalancer
+  ports:
+    game:
+      name: game
+      port: &gameport 7777
+      targetPort: *gameport
+      protocol: UDP
+    query:
+      name: query
+      port: &queryport 15777
+      targetPort: *queryport
+      protocol: UDP
+    beacon:
+      name: beacon
+      port: &beaconport 15000
+      targetPort: *beaconport
+      protocol: UDP
+
 env:
   AUTOPAUSE: true # -- pause game when no player is connected
   AUTOSAVEINTERVAL: 300 # -- autosave interval in seconds
@@ -43,31 +62,12 @@ env:
   PGID: 1000 # -- set the group ID of the user the server will run as
   PUID: 1000 # -- set the user ID of the user the server will run as
   NETWORKQUALITY: 3 # -- set the network quality (1-3)
-  SERVERBEACONPORT: 15000 # -- set the game's beacon port
-  SERVERGAMEPORT: 7777 # -- set the game's port
+  SERVERBEACONPORT: *beaconport # -- set the game's beacon port
+  SERVERGAMEPORT: *gameport # -- set the game's port
   SERVERIP: 0.0.0.0 # -- set the game's ip (usually not needed)
-  SERVERQUERYPORT: 15777 # -- set the game's query port
+  SERVERQUERYPORT: *queryport # -- set the game's query port
   SKIPUPDATE: false # -- avoid updating the game on container start/restart
   STEAMBETA: false # -- set experimental game version
-
-service:
-  type: LoadBalancer
-  ports:
-    game:
-      name: game
-      port: 7777
-      targetPort: 7777
-      protocol: UDP
-    query:
-      name: query
-      port: 15777
-      targetPort: 157777
-      protocol: UDP
-    beacon:
-      name: beacon
-      port: 15000
-      targetPort: 15000
-      protocol: UDP
 
 resources:
   {}
