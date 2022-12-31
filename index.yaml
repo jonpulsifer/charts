@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  satisfactory:
+  - apiVersion: v2
+    appVersion: 1.4.4
+    created: "2022-12-31T02:17:34.678167602Z"
+    description: A Helm chart for Satisfactory
+    digest: 527fa27d3d5f94fba7b447319cc0f7e9f988a8c6fa7df4337b71391c8faa854d
+    name: satisfactory
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/satisfactory-0.1.0/satisfactory-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-12-31T02:17:34.678173002Z"
