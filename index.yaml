@@ -3,6 +3,16 @@ entries:
   echo-server:
   - apiVersion: v2
     appVersion: 0.3.4
+    created: "2023-01-04T02:02:17.986087326Z"
+    description: A Helm chart for Kubernetes
+    digest: 7d82a34def4822dcf848ab3eec0330bbfb3a9d30986c76e5f7e60cbab52752c7
+    name: echo-server
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/echo-server-0.1.3/echo-server-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.3.4
     created: "2023-01-04T00:06:18.114996736Z"
     description: A Helm chart for Kubernetes
     digest: bbef73240dfb660a3a803b2aa180f845491afe4a9980a601cd824e2dc53e1c4e
@@ -82,4 +92,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/satisfactory-0.1.0/satisfactory-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-04T00:06:18.115011336Z"
+generated: "2023-01-04T02:02:17.986104526Z"
