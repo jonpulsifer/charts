@@ -38,7 +38,7 @@ ingress:
   className: ""
   annotations: {}
   hosts:
-    - host: &host ""
+    - host: &host "echo-server.example.com"
       paths:
         - path: /
           pathType: Prefix
