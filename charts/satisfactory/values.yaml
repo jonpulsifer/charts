@@ -34,24 +34,21 @@ ingress:
 service:
   type: LoadBalancer
   ports:
-    game:
-      name: game
+    - name: game
       port: &gameport 7777
       targetPort: *gameport
       protocol: UDP
-    query:
-      name: query
+    - name: query
       port: &queryport 15777
       targetPort: *queryport
       protocol: UDP
-    beacon:
-      name: beacon
+    - name: beacon
       port: &beaconport 15000
       targetPort: *beaconport
       protocol: UDP
 
 env:
-  AUTOPAUSE: true # -- pause game when no player is connected
+  AUTOPAUSE: false # -- pause game when no player is connected
   AUTOSAVEINTERVAL: 300 # -- autosave interval in seconds
   AUTOSAVENUM: 3 # -- number of rotating autosave files
   AUTOSAVEONDISCONNECT: true # -- autosave when last player disconnects

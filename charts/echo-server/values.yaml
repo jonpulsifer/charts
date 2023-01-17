@@ -31,7 +31,11 @@ securityContext:
 
 service:
   type: ClusterIP
-  port: 80
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
 
 ingress:
   enabled: true
@@ -46,6 +50,22 @@ ingress:
     - secretName: *host
       hosts:
         - *host
+
+probes:
+  liveness:
+    enabled: true
+    httpGet:
+      path: /
+      port: http
+    initialDelaySeconds: 30
+    periodSeconds: 10
+  readiness:
+    enabled: true
+    httpGet:
+      path: /
+      port: http
+    initialDelaySeconds: 0
+    periodSeconds: 10
 
 resources:
   {}
