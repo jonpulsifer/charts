@@ -1,0 +1,39 @@
+{{- define "common.probes" -}}
+{{- range $probeType, $probe := .Values.probes }}
+{{ $probeType }}Probe:
+  {{- with $probe.httpGet }}
+  httpGet:
+    {{- if .path }}
+    path: {{ .path }}
+    {{- end }}
+    {{- if .port }}
+    port: {{ .port }}
+    {{- end }}
+    {{- if .httpHeaders }}
+    httpHeaders:
+      {{- range .httpHeaders }}
+      - name: {{ .name }}
+        value: {{ .value }}
+      {{- end }}
+    {{- end }}
+    {{- if .scheme }}
+    scheme: {{ .scheme }}
+    {{- end }}
+  {{- end }}
+  {{- with $probe.exec }}
+  exec:
+    {{- range .command }}
+    - {{ . }}
+    {{- end }}
+  {{- end }}
+  {{- with $probe.tcpSocket }}
+  tcpSocket:
+    port: {{ .port }}
+  {{- end }}
+  initialDelaySeconds: {{ $probe.initialDelaySeconds | default 0 }}
+  periodSeconds: {{ $probe.periodSeconds | default 5 }}
+  timeoutSeconds: {{ $probe.timeoutSeconds | default 30 }}
+  successThreshold: {{ $probe.successThreshold | default 1 }}
+  failureThreshold: {{ $probe.failureThreshold | default 10 }}
+{{- end }}
+{{- end }}

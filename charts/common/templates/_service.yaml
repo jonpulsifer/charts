@@ -1,0 +1,23 @@
+{{- define "common.service" -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name | printf "%s-%s" .Chart.Name }}
+  labels:
+    {{- include "common.labels" . | nindent 4 }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  {{- with .Values.service.ports }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- if and .Values.service.clusterIP (eq .Values.service.type "ClusterIP") }}
+  clusterIP: {{ .Values.service.clusterIP }}
+  {{- end }}
+  selector:
+    {{- include "common.selectorLabels" . | nindent 4 }}
+{{- end -}}
