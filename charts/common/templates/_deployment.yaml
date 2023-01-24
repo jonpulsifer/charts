@@ -36,7 +36,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: {{ $targetPort }}
-              containerPort: {{ $targetPort }}
+              containerPort: {{ (first .Values.service.ports).port }}
               protocol: {{ (first .Values.service.ports).protocol | upper | default "TCP" }}
           {{- if .Values.env }}
           env:
