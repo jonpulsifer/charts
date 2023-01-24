@@ -192,6 +192,20 @@ entries:
   unifi-poller:
   - apiVersion: v2
     appVersion: v2.7.11
+    created: "2023-01-24T01:41:42.036976772Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.3
+    description: A Helm chart for Kubernetes
+    digest: 1a3f0766a953ad1299c4e92da82af2dcec72c2a2f2b8cce6cba4882170593ac0
+    name: unifi-poller
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.4/unifi-poller-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: v2.7.11
     created: "2023-01-24T01:08:40.383487322Z"
     dependencies:
     - name: common
@@ -232,4 +246,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-24T01:10:42.922872996Z"
+generated: "2023-01-24T01:41:42.037010573Z"
