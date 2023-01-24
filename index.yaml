@@ -34,6 +34,20 @@ entries:
   echo-server:
   - apiVersion: v2
     appVersion: 0.3.4
+    created: "2023-01-24T01:10:42.778347194Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.3
+    description: A Helm chart for Kubernetes
+    digest: 1d674fb1d203dd19e523bd10d5024763b40464c83a3507ace393b27681748433
+    name: echo-server
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/echo-server-0.1.6/echo-server-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 0.3.4
     created: "2023-01-24T00:24:35.129118308Z"
     dependencies:
     - name: common
@@ -97,6 +111,20 @@ entries:
     - https://github.com/jonpulsifer/charts/releases/download/echo-server-0.1.0/echo-server-0.1.0.tgz
     version: 0.1.0
   satisfactory:
+  - apiVersion: v2
+    appVersion: 1.4.4
+    created: "2023-01-24T01:10:42.922809797Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.3
+    description: A Helm chart for Satisfactory
+    digest: 067e999319c0c8e7c9a04160e4a075fd7d0e4bb559c38ee13a9d900d8fceb958
+    name: satisfactory
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/satisfactory-0.1.6/satisfactory-0.1.6.tgz
+    version: 0.1.6
   - apiVersion: v2
     appVersion: 1.4.4
     created: "2023-01-24T00:24:35.273785781Z"
@@ -204,4 +232,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-24T01:08:40.383527423Z"
+generated: "2023-01-24T01:10:42.922872996Z"
