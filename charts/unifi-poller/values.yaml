@@ -1,0 +1,84 @@
+# Default values for echo-server.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/unpoller/unpoller
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  ports:
+    - port: 9130
+      targetPort: metrics
+      protocol: TCP
+      name: metrics
+
+env:
+  UP_UNIFI_DISABLE: false # turns off this input. don't do that!
+  UP_UNIFI_DYNAMIC: false # enables dynamic lookups (from prometheus)
+  UP_UNIFI_DEFAULT_ROLE: URL # URL allows grouping controllers
+  UP_UNIFI_DEFAULT_URL: https://127.0.0.1:8443 # only applies if no controllers are defined (next section)
+  UP_UNIFI_DEFAULT_USER: unifipoller # applies to any controller without a username
+  UP_UNIFI_DEFAULT_PASS: "" # applies to any controller without a password
+  UP_UNIFI_DEFAULT_SAVE_SITES: true #
+  UP_UNIFI_DEFAULT_SAVE_IDS: true # Only works with InfluxDB / Loki
+  UP_UNIFI_DEFAULT_SAVE_EVENTS: true #Only works with InfluxDB / Loki, added in v2.0.2
+  UP_UNIFI_DEFAULT_SAVE_ALARMS: true # Only works with InfluxDB / Loki, added in v2.0.2
+  UP_UNIFI_DEFAULT_SAVE_ANOMALIES: true # Only works with InfluxDB / Loki, added in v2.0.2
+  UP_UNIFI_DEFAULT_SAVE_DPI: true
+  UP_UNIFI_DEFAULT_VERIFY_SSL: false
+  UP_UNIFI_DEFAULT_SITE_0: ["all"] # specify more sites with _1, _2, etc.
+  UP_PROMETHEUS_DISABLE: false
+  UP_PROMETHEUS_NAMESPACE: unifipoller
+  UP_PROMETHEUS_HTTP_LISTEN: 0.0.0.0:9130
+  UP_PROMETHEUS_REPORT_ERRORS: false
+  UP_PROMETHEUS_BUFFER: 50
+  UP_INFLUXDB_DISABLE: false
+  UP_INFLUXDB_URL: http://127.0.0.1:8086 # influxdb URL
+  UP_INFLUXDB_DB: unifi # name of database you created in influx
+  UP_INFLUXDB_USER: unifipoller # username with access to database
+  UP_INFLUXDB_PASS: unifipoller #password for username
+  UP_INFLUXDB_INTERVAL: 30s # how often to poll and collect metrics, ie "1m" or "90s"
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
