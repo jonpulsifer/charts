@@ -32,10 +32,10 @@ securityContext:
 service:
   type: ClusterIP
   ports:
-    - port: 80
-      targetPort: http
+    - port: 8080
+      targetPort: http-alt
       protocol: TCP
-      name: http
+      name: http-alt
 
 ingress:
   enabled: true
@@ -56,14 +56,14 @@ probes:
     enabled: true
     httpGet:
       path: /
-      port: http
+      port: http-alt
     initialDelaySeconds: 30
     periodSeconds: 10
   readiness:
     enabled: true
     httpGet:
       path: /
-      port: http
+      port: http-alt
     initialDelaySeconds: 0
     periodSeconds: 10
 
