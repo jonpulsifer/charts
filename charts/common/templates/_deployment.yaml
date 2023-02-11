@@ -37,7 +37,7 @@ spec:
           ports:
             - name: {{ $targetPort }}
               containerPort: {{ (first .Values.service.ports).port }}
-              protocol: {{ (first .Values.service.ports).protocol | upper | default "TCP" }}
+              protocol: {{ (first .Values.service.ports).protocol | default "TCP" }}
           {{- if .Values.env }}
           env:
           {{- range $key, $value := .Values.env }}
