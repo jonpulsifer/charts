@@ -44,6 +44,20 @@ entries:
   echo-server:
   - apiVersion: v2
     appVersion: 0.3.4
+    created: "2023-02-11T22:47:51.191790134Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.4
+    description: A Helm chart for Kubernetes
+    digest: 4fbe7b99611dc5f6f06f0dc0c36ab871cb88bf2d19304f4b6c93605b2b110595
+    name: echo-server
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/echo-server-0.1.7/echo-server-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 0.3.4
     created: "2023-01-24T01:10:42.778347194Z"
     dependencies:
     - name: common
@@ -256,4 +270,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-02-11T22:46:35.95228263Z"
+generated: "2023-02-11T22:47:51.191833934Z"
