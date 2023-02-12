@@ -74,6 +74,20 @@ entries:
   echo-server:
   - apiVersion: v2
     appVersion: 0.3.4
+    created: "2023-02-12T02:02:57.186943365Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.7
+    description: A Helm chart for Kubernetes
+    digest: 1e4bd34069af011c5206c6093650841e0643b26b40f7e1bb020e877f6c592d52
+    name: echo-server
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/echo-server-0.1.10/echo-server-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: 0.3.4
     created: "2023-02-11T23:59:20.260239523Z"
     dependencies:
     - name: common
@@ -195,6 +209,20 @@ entries:
   satisfactory:
   - apiVersion: v2
     appVersion: 1.4.4
+    created: "2023-02-12T02:02:57.346094478Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.7
+    description: A Helm chart for Satisfactory
+    digest: 2bb7b61a00d4a0150d304e3a61e0a0df1a3ee1f0d0590187f5708d2613381beb
+    name: satisfactory
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/satisfactory-0.1.9/satisfactory-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.4.4
     created: "2023-02-11T23:59:20.463922663Z"
     dependencies:
     - name: common
@@ -302,6 +330,20 @@ entries:
   unifi-poller:
   - apiVersion: v2
     appVersion: v2.7.11
+    created: "2023-02-12T02:02:57.484209445Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.7
+    description: A Helm chart for Kubernetes
+    digest: d8eb71a087b0c19cfa86cd2e7a622d3bbf4064b6e842efe76eefea43b1d906a8
+    name: unifi-poller
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.7/unifi-poller-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: v2.7.11
     created: "2023-02-11T23:59:20.668375112Z"
     dependencies:
     - name: common
@@ -384,4 +426,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-02-12T01:02:54.617266362Z"
+generated: "2023-02-12T02:02:57.484440046Z"
