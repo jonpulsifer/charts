@@ -38,7 +38,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ .Release.Name | printf "%s-%s" .Chart.Name }}
+                name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
           {{- end }}

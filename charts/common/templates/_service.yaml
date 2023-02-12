@@ -1,8 +1,10 @@
 {{- define "common.service" -}}
+{{- $fullName := include "common.fullname" . -}}
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name | printf "%s-%s" .Chart.Name }}
+  name: {{ $fullName }}
   labels:
     {{- include "common.labels" . | nindent 4 }}
   {{- with .Values.service.annotations }}
