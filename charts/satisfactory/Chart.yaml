@@ -6,5 +6,5 @@ version: 0.1.8
 appVersion: "1.4.4"
 dependencies:
   - name: common
-    version: 0.0.6
+    version: 0.0.7
     repository: https://jonpulsifer.github.io/charts
