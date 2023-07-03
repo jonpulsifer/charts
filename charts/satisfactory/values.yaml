@@ -34,17 +34,20 @@ ingress:
 service:
   type: LoadBalancer
   ports:
-    - name: game
+    beacon:
+      name: beacon
+      port: &beaconport 15000
+      targetPort: *beaconport
+      protocol: UDP
+    game:
+      name: game
       port: &gameport 7777
       targetPort: *gameport
       protocol: UDP
-    - name: query
+    query:
+      name: query
       port: &queryport 15777
       targetPort: *queryport
-      protocol: UDP
-    - name: beacon
-      port: &beaconport 15000
-      targetPort: *beaconport
       protocol: UDP
 
 env:
