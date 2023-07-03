@@ -2,9 +2,9 @@ apiVersion: v2
 name: satisfactory
 description: A Helm chart for Satisfactory
 type: application
-version: 0.1.15
+version: 0.1.16
 appVersion: "1.5.2"
 dependencies:
   - name: common
-    version: 0.0.7
+    version: 0.0.10
     repository: https://jonpulsifer.github.io/charts
