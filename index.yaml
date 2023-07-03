@@ -219,6 +219,20 @@ entries:
   satisfactory:
   - apiVersion: v2
     appVersion: 1.5.2
+    created: "2023-07-03T21:17:21.358496111Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.10
+    description: A Helm chart for Satisfactory
+    digest: e9cdb09879e6af1ae46ae0181b2d1320b278bd7510c8c7dc839ff277a17367f1
+    name: satisfactory
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/satisfactory-0.1.16/satisfactory-0.1.16.tgz
+    version: 0.1.16
+  - apiVersion: v2
+    appVersion: 1.5.2
     created: "2023-07-03T21:14:36.248835247Z"
     dependencies:
     - name: common
@@ -520,4 +534,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-07-03T21:15:29.293973809Z"
+generated: "2023-07-03T21:17:21.359078741Z"
