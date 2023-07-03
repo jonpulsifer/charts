@@ -15,7 +15,15 @@ spec:
   type: {{ .Values.service.type }}
   ports:
   {{- with .Values.service.ports }}
-    {{- toYaml . | nindent 4 }}
+  {{- range $k, $v := . }}
+    - name: {{ $v.name }}
+      port: {{ $v.port }}
+      targetPort: {{ $v.targetPort | default $v.port }}
+      protocol: {{ $v.protocol | default "TCP" }}
+      {{- if $v.nodePort }}
+      nodePort: {{ $v.nodePort }}
+      {{- end }}
+  {{- end }}
   {{- end }}
   {{- if and .Values.service.clusterIP (eq .Values.service.type "ClusterIP") }}
   clusterIP: {{ .Values.service.clusterIP }}

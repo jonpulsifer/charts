@@ -32,10 +32,18 @@ securityContext:
 service:
   type: ClusterIP
   ports:
-    - port: 9130
+    metrics:
+      port: 9130
       targetPort: metrics
       protocol: TCP
       name: metrics
+
+ports:
+  metrics:
+    port: 9130
+    containePort: metrics
+    protocol: TCP
+    name: metrics
 
 env:
   UP_UNIFI_DISABLE: false # turns off this input. don't do that!

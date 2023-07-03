@@ -1,6 +1,5 @@
 {{- define "common.deployment" -}}
 {{- $fullName := include "common.fullname" . -}}
-{{- $targetPort := (first .Values.service.ports).targetPort -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -34,10 +33,14 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.ports }}
           ports:
-            - name: {{ $targetPort }}
-              containerPort: {{ (first .Values.service.ports).port }}
-              protocol: {{ (first .Values.service.ports).protocol | default "TCP" }}
+            {{- range . }}
+            - name: {{ .name }}
+              containerPort: {{ .containerPort }}
+              protocol: {{ .protocol }}
+            {{- end }}
+          {{- end }}
           {{- if .Values.env }}
           env:
           {{- range $key, $value := .Values.env }}
