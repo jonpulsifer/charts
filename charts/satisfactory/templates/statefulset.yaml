@@ -29,13 +29,13 @@ spec:
           ports:
             - name: {{ .Values.service.ports.beacon.name | default "beacon" }}
               containerPort: {{ .Values.service.ports.beacon.targetPort | default 15000 }}
-              protocol: "UDP"
+              protocol: {{ .Values.service.ports.beacon.protocol | default "UDP"}}
             - name: {{ .Values.service.ports.game.name | default "game"}}
               containerPort: {{ .Values.service.ports.game.targetPort | default 7777}}
-              protocol: "UDP"
+              protocol: {{ .Values.service.ports.game.protocol | default "UDP"}}
             - name: {{ .Values.service.ports.query.name | default "query"}}
               containerPort: {{ .Values.service.ports.query.targetPort | default 15777}}
-              protocol: "UDP"
+              protocol: {{ .Values.service.ports.query.protocol | default "UDP"}}
           env:
           {{- range $key, $value := .Values.env }}
             - name: {{ $key }}
