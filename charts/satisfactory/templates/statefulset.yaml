@@ -27,15 +27,15 @@ spec:
           image: {{ .Values.image.repository }}:v{{ .Values.image.tag | default .Chart.AppVersion }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: {{ .Values.service.ports.beacon.name }}
-              containerPort: {{ .Values.service.ports.beacon.targetPort }}
-              protocol: {{ .Values.service.ports.beacon.protocol }}
-            - name: {{ .Values.service.ports.game.name }}
-              containerPort: {{ .Values.service.ports.game.targetPort }}
-              protocol: {{ .Values.service.ports.game.protocol }}
-            - name: {{ .Values.service.ports.query.name }}
-              containerPort: {{ .Values.service.ports.query.targetPort }}
-              protocol: {{ .Values.service.ports.query.protocol }}
+            - name: {{ .Values.service.ports.beacon.name | default "beacon" }}
+              containerPort: {{ .Values.service.ports.beacon.targetPort | default 15000 }}
+              protocol: "UDP"
+            - name: {{ .Values.service.ports.game.name | default "game"}}
+              containerPort: {{ .Values.service.ports.game.targetPort | default 7777}}
+              protocol: "UDP"
+            - name: {{ .Values.service.ports.query.name | default "query"}}
+              containerPort: {{ .Values.service.ports.query.targetPort | default 15777}}
+              protocol: "UDP"
           env:
           {{- range $key, $value := .Values.env }}
             - name: {{ $key }}
