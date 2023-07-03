@@ -2,7 +2,7 @@ apiVersion: v2
 name: satisfactory
 description: A Helm chart for Satisfactory
 type: application
-version: 0.1.12
+version: 0.1.13
 appVersion: "1.5.2"
 dependencies:
   - name: common
