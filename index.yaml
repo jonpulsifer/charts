@@ -240,6 +240,21 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/echo-server-0.1.0/echo-server-0.1.0.tgz
     version: 0.1.0
+  nextjs:
+  - apiVersion: v2
+    appVersion: "0.1"
+    created: "2023-08-27T19:49:50.636522538Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.11
+    description: A Helm chart for Kubernetes
+    digest: e3d086e7dc81d1b8400a99fe45f00bd61b0b39eba64095e40ced70c038d05b74
+    name: nextjs
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/nextjs-0.0.1/nextjs-0.0.1.tgz
+    version: 0.0.1
   request-headers:
   - apiVersion: v2
     appVersion: "0.1"
@@ -573,4 +588,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-27T19:45:11.269836535Z"
+generated: "2023-08-27T19:49:50.636607538Z"
