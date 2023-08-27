@@ -10,6 +10,11 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+ports:
+  - name: http-alt
+    containerPort: 8080
+    protocol: TCP
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -32,11 +37,10 @@ securityContext:
 service:
   type: ClusterIP
   ports:
-    http:
-      port: 8080
-      targetPort: http-alt
-      protocol: TCP
-      name: http-alt
+  - name: http-alt
+    port: 8080
+    targetPort: http-alt
+    protocol: TCP
 
 ingress:
   enabled: true
