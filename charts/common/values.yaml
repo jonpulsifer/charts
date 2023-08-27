@@ -61,6 +61,15 @@ ingress:
       hosts:
         - *host
 
+# env:
+# - name: ENVIRONMENT
+#   value: "dev"
+# - name: LOG_LEVEL
+#   valueFrom:
+#     configMapKeyRef:
+#       name: log-level
+#       key: log-level
+
 probes:
   liveness:
     enabled: false
