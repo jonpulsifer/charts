@@ -1,0 +1,10 @@
+apiVersion: v2
+name: application
+description: A regular old Helm chart for a Kubernetes deployment, service, and ingress
+type: application
+version: 0.0.1
+appVersion: "0.1"
+dependencies:
+  - name: common
+    version: 0.0.11
+    repository: https://jonpulsifer.github.io/charts
