@@ -1,5 +1,21 @@
 apiVersion: v1
 entries:
+  application:
+  - apiVersion: v2
+    appVersion: "0.1"
+    created: "2023-09-10T00:39:51.828198319Z"
+    dependencies:
+    - name: common
+      repository: https://jonpulsifer.github.io/charts
+      version: 0.0.11
+    description: A regular old Helm chart for a Kubernetes deployment, service, and
+      ingress
+    digest: 2a16bda8fadc4ace16cfe5751c89eb49a61f0e145ff151619332f05f6d0baa32
+    name: application
+    type: application
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/application-0.0.1/application-0.0.1.tgz
+    version: 0.0.1
   common:
   - apiVersion: v2
     created: "2023-08-27T19:36:18.236279742Z"
@@ -588,4 +604,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-27T19:49:50.636607538Z"
+generated: "2023-09-10T00:39:51.828288023Z"
