@@ -93,6 +93,16 @@ entries:
     version: 0.0.1
   common:
   - apiVersion: v2
+    created: "2023-10-22T21:27:13.080935914Z"
+    description: A Helm chart for Kubernetes
+    digest: 8ffa174f645bd45514002466deeac0a9d3eba3a1dfa0e3df9638d9a790da116e
+    kubeVersion: '>=1.27.0-0'
+    name: common
+    type: library
+    urls:
+    - https://github.com/jonpulsifer/charts/releases/download/common-0.0.16/common-0.0.16.tgz
+    version: 0.0.16
+  - apiVersion: v2
     created: "2023-10-22T20:00:16.288873934Z"
     description: A Helm chart for Kubernetes
     digest: 9da9614786a2162506c4cdf0972b186856c72b6c21400e5b35c63451800ea673
@@ -719,4 +729,4 @@ entries:
     urls:
     - https://github.com/jonpulsifer/charts/releases/download/unifi-poller-0.0.1/unifi-poller-0.0.1.tgz
     version: 0.0.1
-generated: "2023-10-22T21:20:07.784650489Z"
+generated: "2023-10-22T21:27:13.081254015Z"
