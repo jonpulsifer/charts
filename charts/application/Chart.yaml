@@ -2,7 +2,7 @@ apiVersion: v2
 name: application
 description: A regular old Helm chart for a Kubernetes deployment, service, and ingress
 type: application
-version: 0.0.6
+version: 0.0.7
 appVersion: "0.1"
 dependencies:
   - name: common
