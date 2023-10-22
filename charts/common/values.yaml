@@ -27,7 +27,7 @@ podSecurityContext:
   {}
   # fsGroup: 2000
 
-securityContext:
+containerSecurityContext:
   allowPrivilegeEscalation: false
   runAsNonRoot: true
   seccompProfile:
