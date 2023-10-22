@@ -1,6 +1,6 @@
 dependencies:
 - name: common
   repository: https://jonpulsifer.github.io/charts
-  version: 0.0.12
-digest: sha256:88aa815f64147645617fa78a443df0672407660943aace8358218ecfd4e95005
-generated: "2023-10-22T14:22:57.684151741-03:00"
+  version: 0.0.13
+digest: sha256:d294ef1f567db444431a4ab10a9406a20cd00ab2376a0e6868770a4e035c2849
+generated: "2023-10-22T15:58:21.35140711-03:00"

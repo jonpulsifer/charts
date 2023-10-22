@@ -52,6 +52,7 @@ ingress:
         - *host
 
 probes:
+  enabled: false
   liveness:
     enabled: true
     httpGet:
