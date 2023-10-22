@@ -2,5 +2,5 @@ apiVersion: v2
 name: common
 description: A Helm chart for Kubernetes
 type: library
-version: 0.0.13
+version: 0.0.14
 kubeVersion: ">=1.27.0-0"
