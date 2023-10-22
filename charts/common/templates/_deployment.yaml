@@ -33,6 +33,15 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.envFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.env }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
           {{- with .Values.ports }}
           ports:
             {{- range . }}
@@ -40,10 +49,6 @@ spec:
               containerPort: {{ .containerPort }}
               protocol: {{ .protocol }}
             {{- end }}
-          {{- end }}
-          {{- if .Values.env }}
-          env:
-            {{- toYaml .Values.env | nindent 12 }}
           {{- end }}
           {{- include "common.probes" . | indent 10 }}
           resources:
