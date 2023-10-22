@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: jonpulsifer
+  repository: jonpulsifer/lol
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -37,6 +37,7 @@ securityContext:
   # runAsUser: 1000
 
 service:
+  enabled: false
   type: ClusterIP
   ports:
     - port: 8080
@@ -71,6 +72,7 @@ ingress:
 #       key: log-level
 
 probes:
+  enabled: false
   liveness:
     enabled: false
     httpGet:

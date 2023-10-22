@@ -1,4 +1,5 @@
 {{- define "common.probes" -}}
+{{- if .Values.probes.enabled }}
 {{- range $probeType, $probe := .Values.probes }}
 {{ $probeType }}Probe:
   {{- with $probe.httpGet }}
@@ -35,5 +36,6 @@
   timeoutSeconds: {{ $probe.timeoutSeconds | default 30 }}
   successThreshold: {{ $probe.successThreshold | default 1 }}
   failureThreshold: {{ $probe.failureThreshold | default 10 }}
+{{- end }}
 {{- end }}
 {{- end }}
