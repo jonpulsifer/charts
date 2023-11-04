@@ -31,6 +31,6 @@ jobs:
         run: |
           helm repo add jonpulsifer https://jonpulsifer.github.io/charts
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.5.0
+        uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
